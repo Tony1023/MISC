@@ -3,13 +3,14 @@
 #include <fstream>
 
 using namespace std;
+
+int f(int n) {
+	if (n == 1) return 1;
+	return 2 * f(n/2);
+}
+
 int main() {
-	ifstream fin("file.txt");
-	int i = 0, j;
-	while(!fin.fail()) {
-		fin >> j;
-		++i;
-	}
-	cout << i << endl;
+	for (int i = 1; i <= 50; ++i)
+		cout << i << ": " << f(i) << endl;
 	return 0;
 }
